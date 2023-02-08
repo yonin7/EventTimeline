@@ -9,7 +9,8 @@ import deleteIcon from "../assets/deleteIcon.png"
 
 const Timeline: React.FC<{data:IdataDayElement[]|undefined,addEvent:(popupToggle:boolean)=>void
     ,onDelete:(removeEventHandler:string)=>void, 
-    onUpdate:(name:string,startDate:string,endDate:string,oldDate:string)=>void }> 
+    // onUpdate:(name:string,startDate:string,endDate:string,oldDate:string)=>void 
+}> 
     = ({data,addEvent,onDelete}) => {
 
         // const updateClickHandler=(name:string,start:string,end:string)=>{

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import Form from './Form';
-import FormUpdate from './FormUpdate';
+// import FormUpdate from './FormUpdate';
 import Timeline from './Timeline';
 import { Container} from './DashboardStyles';
 import {IdataDayElement} from '../interfaces/data'
@@ -11,16 +11,16 @@ const Dashboard: React.FC<{selectedDay:string|null,message:(setMessage:string)=>
     const [data,setData]=useState<{[key:string]:IdataDayElement[]}>({})
     const [selectedDayData,setSelectedDayData]=useState<IdataDayElement[]>()
     const [popupIsShown,setPopupIsShown]=useState(false)
-    const [popupUpdateIsShown,setPopupUpdateIsShown]=useState(false)
-    const [oldEventDetails,setOldEventDetails]=useState<IdataDayElement>({name:'',start:'',end:""})
+    // const [popupUpdateIsShown,setPopupUpdateIsShown]=useState(false)
+    // const [oldEventDetails,setOldEventDetails]=useState<IdataDayElement>({name:'',start:'',end:""})
     const [count, setCount] = useState(false);
 
     const popupToggle =()=>{
         setPopupIsShown(!popupIsShown)
     }
-    const updateEvent =()=>{
-        setPopupUpdateIsShown(!popupIsShown)
-    }
+    // const updateEvent =()=>{
+    //     setPopupUpdateIsShown(!popupIsShown)
+    // }
     useEffect(()=>{
         if(selectedDay!==null)setSelectedDayData(data[selectedDay])
         
@@ -98,14 +98,14 @@ const Dashboard: React.FC<{selectedDay:string|null,message:(setMessage:string)=>
 
    
 
-    const updateEventHandler=(name:string,startDate:string,endDate:string,oldDate:string)=>{
-        validateOverlappingDates(startDate)
-        validateStartDateBiggerEndDate(startDate, endDate)
-        validateStartDateEndDateSameDay(startDate, endDate)
+    // const updateEventHandler=(name:string,startDate:string,endDate:string,oldDate:string)=>{
+    //     validateOverlappingDates(startDate)
+    //     validateStartDateBiggerEndDate(startDate, endDate)
+    //     validateStartDateEndDateSameDay(startDate, endDate)
 
-        removeEventHandler(oldDate)
-        createEventHandler(name,startDate,endDate)
-    }
+    //     removeEventHandler(oldDate)
+    //     createEventHandler(name,startDate,endDate)
+    // }
     const sortData = (dayData:string)=>{
         if((data[dayData]===undefined )|| (data[dayData].length<=1)) return
         data[dayData].sort((x:IdataDayElement,y:IdataDayElement)=>{
@@ -117,10 +117,10 @@ const Dashboard: React.FC<{selectedDay:string|null,message:(setMessage:string)=>
 
   return (
     <Container>
-        {!popupUpdateIsShown&&popupIsShown&&<Form onClose={popupToggle} createEventHandler={createEventHandler} message={message} /> }
-        {popupUpdateIsShown&&!popupIsShown&&<FormUpdate onClose={popupToggle} onUpdate={updateEventHandler} oldData={oldEventDetails} message={message}/> }
+        {popupIsShown&&<Form onClose={popupToggle} createEventHandler={createEventHandler} message={message} /> }
+        {/* {popupUpdateIsShown&&!popupIsShown&&<FormUpdate onClose={popupToggle} onUpdate={updateEventHandler} oldData={oldEventDetails} message={message}/> } */}
         <Timeline data={selectedDayData} addEvent={popupToggle} onDelete={removeEventHandler} 
-        onUpdate={updateEventHandler} />
+         />
     </Container>
   )
 }
