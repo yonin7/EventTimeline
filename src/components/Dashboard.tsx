@@ -120,7 +120,7 @@ const Dashboard: React.FC<{selectedDay:string|null,message:(setMessage:string)=>
         {!popupUpdateIsShown&&popupIsShown&&<Form onClose={popupToggle} createEventHandler={createEventHandler} message={message} /> }
         {popupUpdateIsShown&&!popupIsShown&&<FormUpdate onClose={popupToggle} onUpdate={updateEventHandler} oldData={oldEventDetails} message={message}/> }
         <Timeline data={selectedDayData} addEvent={popupToggle} onDelete={removeEventHandler} 
-        onUpdate={updateEventHandler} setOldEventDetails={setOldEventDetails} updateEvent={updateEvent}/>
+        onUpdate={updateEventHandler} />
     </Container>
   )
 }

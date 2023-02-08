@@ -7,20 +7,20 @@ import { DeleteBTN } from './TimelineStyles';
 import deleteIcon from "../assets/deleteIcon.png"
 
 
-const Timeline: React.FC<{data:IdataDayElement[]|undefined,addEvent:(popupToggle:boolean)=>void,updateEvent:(popupToggle:boolean)=>void
+const Timeline: React.FC<{data:IdataDayElement[]|undefined,addEvent:(popupToggle:boolean)=>void
     ,onDelete:(removeEventHandler:string)=>void, 
-    onUpdate:(name:string,startDate:string,endDate:string,oldDate:string)=>void,setOldEventDetails:(data:IdataDayElement)=>void }> 
-    = ({data,addEvent,onDelete,updateEvent,setOldEventDetails}) => {
+    onUpdate:(name:string,startDate:string,endDate:string,oldDate:string)=>void }> 
+    = ({data,addEvent,onDelete}) => {
 
-        const updateClickHandler=(name:string,start:string,end:string)=>{
-            const oldData:IdataDayElement={
-                name,
-                start,
-                end
-            }
-            setOldEventDetails(oldData)
-            updateEvent(true)
-        }
+        // const updateClickHandler=(name:string,start:string,end:string)=>{
+        //     const oldData:IdataDayElement={
+        //         name,
+        //         start,
+        //         end
+        //     }
+        //     setOldEventDetails(oldData)
+        //     updateEvent(true)
+        // }
   return (
     <VerticalTimeline>
     {data?.map((task)=> {
