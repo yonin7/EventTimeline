@@ -100,6 +100,67 @@ background:none;
   }
 
 `;
+ export const CloseBTN = styled.div`
+ width:40px;
+ background: transparent;
+ backface-visibility: hidden;
+ color: #212121;
+ cursor: pointer;
+ display: inline-block;
+ font-family: Circular,Helvetica,sans-serif;
+ font-size: 1.125rem;
+ font-weight: 700;
+ letter-spacing: -.01em;
+ line-height: 1.3;
+ position: relative;
+ text-align: left;
+ text-decoration: none;
+ transform: translateZ(0) scale(1);
+ transition: transform .2s;
+ user-select: none;
+ -webkit-user-select: none;
+ touch-action: manipulation;
+ border:0;
+ padding:0;
+ :not(:disabled):hover {
+     transform: scale(1.05);
+ }
+ :not(:disabled):hover:active {
+   transform: scale(1.05) translateY(.125rem);
+ }
+ :not(:disabled):hover:active {
+   transform: scale(1.05) translateY(.125rem);
+ }
+
+ :focus {
+   outline: 0 solid transparent;
+ }
+ 
+ :focus:before {
+   content: "";
+   left: calc(-1*.375rem);
+   pointer-events: none;
+   position: absolute;
+   top: calc(-1*.375rem);
+   transition: border-radius;
+   user-select: none;
+ }
+ 
+ :focus:not(:focus-visible) {
+   outline: 0 solid transparent;
+ }
+ 
+ :focus:not(:focus-visible):before {
+   border-width: 0;
+ }
+ 
+ :not(:disabled):active {
+   transform: translateY(.125rem);
+ }
+ 
+   
+
+`;
 
 
 export const CreateButton = styled.button.attrs((props:any) => ({

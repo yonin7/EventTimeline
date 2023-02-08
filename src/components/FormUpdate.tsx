@@ -3,8 +3,8 @@ import { Container,Title,EventName,DateInput,Header,InputsContainer,CreateButton
 import Modal from './Modal';
 import {IdataDayElement} from '../interfaces/data'
 
-const FormUpdate: React.FC<{ oldData:IdataDayElement,onClose:(setPopupIsShown:boolean)=>void
-    onUpdate:(name:string,startDate:string,endDate:string,oldDate:string)=>void}> = ({onClose,onUpdate,oldData}) => {
+const FormUpdate: React.FC<{message:(setMessage:string)=>void, oldData:IdataDayElement,onClose:(setPopupIsShown:boolean)=>void
+    onUpdate:(name:string,startDate:string,endDate:string,oldDate:string)=>void}> = ({onClose,onUpdate,oldData,message}) => {
     const [eventName,setEventName]=useState<string>(oldData.name)
     const [eventStartDate,setEventStartDate]=useState<string>(oldData.start)
     const [eventEndDate,setEventEndDate]=useState<string>(oldData.end)

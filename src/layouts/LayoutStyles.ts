@@ -15,13 +15,3 @@ export const MainContainer = styled.main`
   width: 100%;
   height: 100vh;
 `;
-// export const PageTitle = styled.aside`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   text-align: center;
-//   border-bottom: 1px solid black;
-//   width: 100%;
-//   height: 5vh;
-//   background: #2c77a3;
-// `;
