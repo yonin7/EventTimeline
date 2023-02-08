@@ -23,7 +23,7 @@ const Dashboard: React.FC<{selectedDay:string|null}> = ({selectedDay}) => {
     useEffect(()=>{
         if(selectedDay!==null)setSelectedDayData(data[selectedDay])
         
-    },[selectedDay])
+    },[selectedDay,data])
     useEffect(()=>{
        if(Object.keys(data).length>0) writeEventData(data)
        
