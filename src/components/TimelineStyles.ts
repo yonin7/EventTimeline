@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { ContentContainer } from './ModalStyles';
 
 export const Container = styled.div`
 position: relative;
